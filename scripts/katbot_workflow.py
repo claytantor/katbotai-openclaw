@@ -105,7 +105,7 @@ def execute_recommendation(token, portfolio_id, rec_id, agent_key):
     return r.json()
 
 def main():
-    parser = argparse.ArgumentParser(description='Tubman full trading workflow')
+    parser = argparse.ArgumentParser(description='Katbot full trading workflow')
     parser.add_argument('--portfolio-id', type=int, default=5)
     parser.add_argument('--top', type=int, default=5)
     parser.add_argument('--bmi-threshold', type=int, default=15)
@@ -114,11 +114,11 @@ def main():
     args = parser.parse_args()
 
     if not args.agent_key:
-        print("ERROR: Set TUBMAN_HL_MAINNET_AGENT_PRIVATE_KEY or pass --agent-key")
+        print("ERROR: Set KATBOT_HL_AGENT_PRIVATE_KEY or pass --agent-key")
         sys.exit(1)
 
     print("=" * 55)
-    print("  😼 TUBMAN TRADING WORKFLOW")
+    print("  😼 KATBOT TRADING WORKFLOW")
     print("=" * 55)
 
     # ── 1. BMI ──────────────────────────────────────────

@@ -16,8 +16,8 @@ from eth_account import Account
 from eth_account.messages import encode_defunct
 
 BASE_URL = "https://api.katbot.ai"
-IDENTITY_FILE = os.path.join(os.path.dirname(__file__), "tubman_wallet.json")
-TOKEN_FILE = os.path.join(os.path.dirname(__file__), "tubman_token.json")
+IDENTITY_FILE = os.path.join(os.path.dirname(__file__), "katbot_wallet.json")
+TOKEN_FILE = os.path.join(os.path.dirname(__file__), "katbot_token.json")
 
 
 # ─────────────────────────────────────────────
@@ -206,7 +206,7 @@ def poll_chat(token: str, ticket_id: str, max_wait: int = 60) -> dict:
 # ─────────────────────────────────────────────
 
 if __name__ == "__main__":
-    print("=== Tubman Client Smoke Test ===")
+    print("=== Katbot Client Smoke Test ===")
     token = get_token()
 
     print("\n[1] Listing portfolios...")
@@ -215,7 +215,7 @@ if __name__ == "__main__":
 
     if not portfolios:
         print("\n[2] Creating first portfolio...")
-        p = create_portfolio(token, name="Tubman-Alpha", description="Agent-managed paper trading portfolio", initial_balance=10000.0)
+        p = create_portfolio(token, name="My-Katbot-Portfolio", description="OpenClaw agent-managed portfolio", initial_balance=10000.0)
         print(f"    Created: {p}")
         portfolio_id = p["id"]
     else:
@@ -228,4 +228,4 @@ if __name__ == "__main__":
     print(f"    Total Value: ${state.get('total_value_usd', 'N/A')}")
     print(f"    Open Positions: {len(state.get('open_positions', []))}")
 
-    print("\n✅ Smoke test complete. Tubman is operational.")
+    print("\n✅ Smoke test complete. Katbot client is operational.")
