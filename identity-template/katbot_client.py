@@ -1,5 +1,5 @@
 """
-tubman_client.py — Katbot API client for Tubman agent.
+katbot_client.py — Katbot.ai API client for OpenClaw agents.
 
 Handles auth (SIWE), token refresh, and all key API operations:
 - Portfolio management
