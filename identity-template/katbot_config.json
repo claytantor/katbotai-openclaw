@@ -1,0 +1,8 @@
+{
+  "_comment": "Copy this to your OpenClaw workspace identity folder. Never commit real keys.",
+  "base_url": "https://api.katbot.ai",
+  "wallet_address": "0xYourMetaMaskWalletAddress",
+  "portfolio_id": null,
+  "portfolio_name": "my-hl-mainnet",
+  "chain_id": 42161
+}
