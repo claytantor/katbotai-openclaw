@@ -1,5 +1,5 @@
 """
-tubman_workflow.py — Full Tubman trading workflow.
+katbot_workflow.py — Full Katbot.ai trading workflow.
 
 Steps:
   1. Get BMI (BTC Momentum Index)
@@ -10,14 +10,14 @@ Steps:
   6. Present recommendation and ask user to confirm execution
 
 Usage:
-  TUBMAN_HL_MAINNET_AGENT_PRIVATE_KEY=0x... uv run scripts/tubman_workflow.py --portfolio-id 5
+  KATBOT_HL_AGENT_PRIVATE_KEY=0x... python3 scripts/katbot_workflow.py --portfolio-id 5
 """
 import sys, os, time, json, argparse, importlib.util
 import requests
 
 sys.path.insert(0, os.path.dirname(__file__))
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
-sys.path.insert(0, os.path.expanduser("~/.openclaw/workspace/tubman-identity"))
+sys.path.insert(0, os.path.expanduser("~/.openclaw/workspace/katbot-identity"))
 
 BMI_SCRIPT = os.path.expanduser("~/obsidian-vault/tools/btc_momentum.py")
 BASE_URL = "https://api.katbot.ai"
@@ -110,7 +110,7 @@ def main():
     parser.add_argument('--top', type=int, default=5)
     parser.add_argument('--bmi-threshold', type=int, default=15)
     parser.add_argument('--agent-key', type=str,
-        default=os.getenv('TUBMAN_HL_MAINNET_AGENT_PRIVATE_KEY') or os.getenv('TUBMAN_HL_AGENT_PRIVATE_KEY'))
+        default=os.getenv('KATBOT_HL_AGENT_PRIVATE_KEY'))
     args = parser.parse_args()
 
     if not args.agent_key:
